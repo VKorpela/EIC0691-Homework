@@ -267,12 +267,12 @@ Status graphDijkstra(Graph G, int vs, int* result) {
 	for (int i = 0; i < G.vsize; i++) result[i] = INF;	//初始化
 	result[vs] = 0;
 	for (int i = 0; i < G.vsize; i++) {
-		int vc, dmin = INF;
+		int vc = -1, dmin = INF;
 		for (int j = 0; j < G.vsize; j++) {		//寻找更新的起点
 			if (G.visit[j]) continue;
 			if (result[j] < dmin) {
 				dmin = result[j];
-				vc = dmin;
+				vc = j;
 			}
 		}
 		if (dmin == INF) break;					//当前的联通子图已经访问完了
