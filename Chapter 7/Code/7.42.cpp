@@ -56,12 +56,12 @@ Status graphDijkstra(Graph G, int vs, int* result) {
 	for (int i = 0; i < G.vsize; i++) result[i] = INF;
 	result[vs] = 0;
 	for (int i = 0; i < G.vsize; i++) {
-		int vc, dmin = INF;
+		int vc = -1, dmin = INF;
 		for (int j = 0; j < G.vsize; j++) {
 			if (G.visit[j]) continue;
 			if (result[j] < dmin) {
 				dmin = result[j];
-				vc = dmin;
+				vc = j;
 			}
 		}
 		if (dmin == INF) break;
