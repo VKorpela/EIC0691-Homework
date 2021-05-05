@@ -1,0 +1,29 @@
+digraph G {
+    rankdir = LR;
+    node [shape = record];
+    
+    list [label = "<n1> 1|<n2> 2|<n3> 3|<n4> 4|<n5> 5|<n6> 6", height = 4];
+    e21 [label = "{<l> 1|<r>}"];
+    e24 [label = "{<l> 4|<r> ^}"];
+    e32 [label = "{<l> 2|<r>}"];
+    e36 [label = "{<l> 6|<r> ^}"];
+    e43 [label = "{<l> 3|<r>}"];
+    e45 [label = "{<l> 5|<r>}"];
+    e46 [label = "{<l> 6|<r> ^}"];
+    e51 [label = "{<l> 1|<r> ^}"];
+    e61 [label = "{<l> 1|<r>}"];
+    e62 [label = "{<l> 2|<r>}"];
+    e65 [label = "{<l> 5|<r> ^}"];
+
+    list:n2 -> e21:l:w;
+    e21:r -> e24:l:w;
+    list:n3 -> e32:l:w;
+    e32:r -> e36:l:w;
+    list:n4 -> e43:l:w;
+    e43:r -> e45:l:w;
+    e45:r -> e46:l:w;
+    list:n5 -> e51:l:w;
+    list:n6 -> e61:l:w;
+    e61:r -> e62:l:w;
+    e62:r -> e65:l:w;
+}

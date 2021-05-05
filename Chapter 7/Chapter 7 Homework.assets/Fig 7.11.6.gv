@@ -1,0 +1,25 @@
+digraph G {
+    rankdir = LR;
+
+    a [label = "a\n0", color = blue];
+    b [label = "b\n15"];
+    c [label = "c\n2", color = blue];
+    d [label = "d\n11", color = blue];
+    e [label = "e\n10", color = blue];
+    f [label = "f\n6", color = blue];
+    g [label = "g\n14", color = green];
+    
+    //{rank = same; b; c; d;}
+
+    a -> b [label = "15"];
+    a -> c [label = "2"];
+    a -> d [label = "12"];
+    b -> e [label = "6"];
+    c -> e [label = "8"];
+    c -> f [label = "4"];
+    f -> d [label = "5"];
+    e -> g [label = "9"];
+    f -> g [label = "10"];
+    g -> b [label = "4"];
+    d -> g [label = "3"];
+}

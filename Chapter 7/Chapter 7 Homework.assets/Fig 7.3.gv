@@ -1,0 +1,38 @@
+digraph G {
+    rankdir = LR;
+    //splines = polyline 
+    node [shape = record];
+    
+    list [label = "<n1> 1|<n2> 2|<n3> 3|<n4> 4|<n5> 5|<n6> 6", height = 4];
+    e12 [label = "{<in>|1|<inext>|2|<jnext>}"];
+    e13 [label = "{<in>|1|<inext>|3|<jnext>}"];
+    e15 [label = "{<in>|1|<inext>|5|<jnext>}"];
+    e16 [label = "{<in>|1|<inext> ^|6|<jnext>}"];
+    e23 [label = "{<in>|2|<inext>|3|<jnext>}"];
+    e24 [label = "{<in>|2|<inext> ^|4|<jnext>}"];
+    e34 [label = "{<in>|3|<inext> ^|4|<jnext>}"];
+    e45 [label = "{<in>|4|<inext>|5|<jnext>}"];
+    e46 [label = "{<in>|4|<inext> ^|6|<jnext>}"];
+    e56 [label = "{<in>|5|<inext> ^|6|<jnext> ^}"];
+
+    list:n1 -> e12:in:w;
+    e12:inext -> e13:in;
+    e13:inext -> e15:in;
+    e15:inext -> e16:in;
+    list:n2 -> e12:in:w;
+    e12:jnext -> e23:in:n;
+    e23:inext -> e24:in;
+    list:n3 -> e13:in;
+    e13:jnext -> e23:in;
+    e23:jnext -> e34:in;
+    list:n4 -> e24:in;
+    e24:jnext -> e34:in;
+    e34:jnext -> e45:in;
+    e45:inext -> e46:in;
+    list:n5 -> e15:in;
+    e15:jnext -> e45:in;
+    e45:jnext -> e56:in;
+    list:n6 -> e16:in;
+    e16:jnext -> e46:in;
+    e46:jnext -> e56:in;
+}

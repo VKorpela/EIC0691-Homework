@@ -1,0 +1,65 @@
+digraph G {
+    rankdir = LR;
+    //splines = polyline 
+    node [shape = record];
+    
+    list [label = "<n1> a|<n2> b|<n3> c|<n4> d|<n5> e|<n6> f|<n7> g|<n8> h", height = 6];
+
+    ab [label = "{<in> b|<next>}"];
+    ac [label = "{<in> c|<next> ^}"];
+    ba [label = "{<in> a|<next>}"];
+    bc [label = "{<in> c|<next>}"];
+    bd [label = "{<in> d|<next>}"];
+    be [label = "{<in> e|<next> ^}"];
+    ca [label = "{<in> a|<next>}"];
+    cb [label = "{<in> b|<next>}"];
+    cd [label = "{<in> d|<next>}"];
+    ch [label = "{<in> h|<next> ^}"];
+    db [label = "{<in> b|<next>}"];
+    dc [label = "{<in> c|<next>}"];
+    de [label = "{<in> e|<next>}"];
+    df [label = "{<in> f|<next>}"];
+    dg [label = "{<in> g|<next>}"];
+    dh [label = "{<in> h|<next> ^}"];
+    eb [label = "{<in> b|<next>}"];
+    ed [label = "{<in> d|<next>}"];
+    ef [label = "{<in> f|<next> ^}"];
+    fd [label = "{<in> d|<next>}"];
+    fe [label = "{<in> e|<next>}"];
+    fg [label = "{<in> g|<next> ^}"];
+    gd [label = "{<in> d|<next>}"];
+    gf [label = "{<in> f|<next>}"];
+    gh [label = "{<in> h|<next> ^}"];
+    hc [label = "{<in> c|<next>}"];
+    hd [label = "{<in> d|<next>}"];
+    hg [label = "{<in> g|<next> ^}"];
+
+    list:n1 -> ab:in:w;
+    ab:next -> ac:in:w;
+    list:n2 -> ba:in:w;
+    ba:next -> bc:in:w;
+    bc:next -> bd:in:w;
+    bd:next -> be:in:w;
+    list:n3 -> ca:in:w;
+    ca:next -> cb:in:w;
+    cb:next -> cd:in:w;
+    cd:next -> ch:in:w;
+    list:n4 -> db:in:w;
+    db:next -> dc:in:w;
+    dc:next -> de:in:w;
+    de:next -> df:in:w;
+    df:next -> dg:in:w;
+    dg:next -> dh:in:w;
+    list:n5 -> eb:in:w;
+    eb:next -> ed:in:w;
+    ed:next -> ef:in:w;
+    list:n6 -> fd:in:w;
+    fd:next -> fe:in:w;
+    fe:next -> fg:in:w;
+    list:n7 -> gd:in:w;
+    gd:next -> gf:in:w;
+    gf:next -> gh:in:w;
+    list:n8 -> hc:in:w;
+    hc:next -> hd:in:w;
+    hd:next -> hg:in:w;
+}
